@@ -6,7 +6,7 @@ $(document).ready(function () {
             if(response.success) {
                 data = [];
                 for (const empleado of response.empleados) {
-                    var viewButton = '<a type="button" class="btn btn-primary"><span class="material-icons">visibility</span></a>';
+                    var viewButton = '<button type="button" class="btn btn-primary"><span class="material-icons">visibility</span></button>';
                     var deleteButton = '<button class="btn btn-danger" onclick="eliminar_empleado('+empleado.id+')" type="button"><span class="material-icons">delete</span></button>';
                     data.push([
                         empleado.id, 
