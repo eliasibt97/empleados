@@ -1,0 +1,22 @@
+.container {
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.del-btn {
+    color: red;
+    
+}
+
+.view-btn {
+    color: blue;
+}
+
+.form-btn {
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 2%;
+    margin-right: 2%;
+}
