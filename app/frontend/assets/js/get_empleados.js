@@ -9,7 +9,7 @@ $(document).ready(function () {
                     var nombre = empleado.nombre;
                     var edad = empleado.edad;
                     var departamento = empleado.departamento;
-                    var viewButton = "<button type='button' class='btn btn-primary' onclick='ver_empleado(`"+ nombre +"`, "+edad+", `"+departamento+"`)'><span class='material-icons'>visibility</span></button>";
+                    var viewButton = "<button type='button' class='btn btn-primary' onclick='ver_empleado("+empleado.id+", `"+ nombre +"`, "+edad+", `"+departamento+"`)'><span class='material-icons'>visibility</span></button>";
                     var deleteButton = '<button type="button" class="btn btn-danger" onclick="eliminar_empleado('+empleado.id+')"><span class="material-icons">delete</span></button>';
                     data.push([
                         empleado.id, 

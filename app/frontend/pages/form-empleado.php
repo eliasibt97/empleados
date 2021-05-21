@@ -1,4 +1,5 @@
 <form id="empleado-form" action="crear" method="POST">
+<input type="number" id="idEmpleado" disabled>
   <div class="mb-3">
     <label for="nombre" class="form-label">Nombre</label>
     <input type="text" class="form-control" id="nombre">

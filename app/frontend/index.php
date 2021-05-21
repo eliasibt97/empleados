@@ -22,6 +22,7 @@
 
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/dt-1.10.24/datatables.min.js"></script>
 <script type="text/javascript" src="./assets/js/get_empleados.js"></script>
+<script type="text/javascript" src="./assets/js/actualizar_empleado.js"></script>
 <script type="text/javascript" src="./assets/js/eliminar_empleado.js"></script>
 <script type="text/javascript" src="./assets/js/ver_empleado.js"></script>
 </body>
