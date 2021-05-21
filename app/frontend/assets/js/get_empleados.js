@@ -6,8 +6,11 @@ $(document).ready(function () {
             if(response.success) {
                 data = [];
                 for (const empleado of response.empleados) {
-                    var viewButton = '<button type="button" class="btn btn-primary"><span class="material-icons">visibility</span></button>';
-                    var deleteButton = '<button class="btn btn-danger" onclick="eliminar_empleado('+empleado.id+')" type="button"><span class="material-icons">delete</span></button>';
+                    var nombre = empleado.nombre;
+                    var edad = empleado.edad;
+                    var departamento = empleado.departamento;
+                    var viewButton = "<button type='button' class='btn btn-primary' onclick='ver_empleado(`"+ nombre +"`, "+edad+", `"+departamento+"`)'><span class='material-icons'>visibility</span></button>";
+                    var deleteButton = '<button type="button" class="btn btn-danger" onclick="eliminar_empleado('+empleado.id+')"><span class="material-icons">delete</span></button>';
                     data.push([
                         empleado.id, 
                         empleado.nombre, 
@@ -16,8 +19,7 @@ $(document).ready(function () {
                         viewButton+deleteButton
                     ]);
                 }
-                renderTable(data);
-                return true;
+                renderTable(data);  
             }
         }
     });
@@ -35,5 +37,4 @@ $(document).ready(function () {
             ]
         });
     }
-    
 });
