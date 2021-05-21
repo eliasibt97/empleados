@@ -76,6 +76,14 @@ class EmpleadoReository implements EmpleadoRepositoryInterface {
 
     public function eliminarEmpleado(int $id): bool
     {
-        return true;
+        try {
+            $query = $this->db->db_connect->prepare("DELETE FROM empleados WHERE id=$id");
+    
+            $query->execute();
+            $data = $query->fetch();
+            return $data;
+            } catch(PDOException $e) {
+                throw $e->getMessage();
+            }
     }
 }
