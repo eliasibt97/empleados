@@ -39,10 +39,6 @@ switch ($method) {
         echo $response;
         break;
 
-    case 'PUT':
-        $response = $handler->put($_PUT['empleado']);
-        echo $response;
-        break;
     default:
         # code...
         break;

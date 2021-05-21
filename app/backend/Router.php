@@ -28,7 +28,7 @@ class Router {
 
     public function crearEmpleado($data) {
         $empleado = $this->createEmpleado->run($data);
-        if(!$empleado <= 0) return $this->response->not_results_found();
+        if(!$empleado <= 0) return $this->response->internal_error();
 
         return $this->response->ok();
     }
@@ -49,9 +49,9 @@ class Router {
 
     public function updateEmpleado($data) {
         $empleado = $this->updateEmpleado->run($data);
-        if(!$empleado) return $this->response->not_results_found();
+        if($empleado) return $this->response->internal_error();
 
-        return $this->response->ok('empleado', $empleado);
+        return $this->response->ok();
     }
     
     public function eliminarEmpleado($id){

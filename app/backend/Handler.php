@@ -32,11 +32,12 @@ public function __construct()
             case "eliminar-empleado":
                 $empleados = $this->router->eliminarEmpleado($data['id']);
                 return $empleados;
+
+            case "actualizar-empleado":
+                $empleados = $this->router->updateEmpleado($data['empleado']);
+                return $empleados;
+            
         }
     }
 
-    public function put($data) {
-        $empleado = $this->router->updateEmpleado($data);
-        return $empleado;
-    }
 }

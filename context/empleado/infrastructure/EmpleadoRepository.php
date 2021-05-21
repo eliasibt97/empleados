@@ -60,11 +60,12 @@ class EmpleadoReository implements EmpleadoRepositoryInterface {
         
     }
     
-    public function actualizarEmpleado(array $data): Empleado
+    public function actualizarEmpleado(array $data): bool
     {
         try {
         $query = $this->db->db_connect->prepare("UPDATE empleados 
-        SET nombre = '".$data['nombre']."', edad = ".$data['edad'].", departamento = '".$data['departamento']."'");
+        SET nombre = '".$data['nombre']."', edad = ".$data['edad'].", departamento = '".$data['departamento']."'
+        WHERE id = ".$data['id']);
 
         $query->execute();
         $data = $query->fetch();
@@ -77,7 +78,7 @@ class EmpleadoReository implements EmpleadoRepositoryInterface {
     public function eliminarEmpleado(int $id): bool
     {
         try {
-            $query = $this->db->db_connect->prepare("DELETE FROM empleados WHERE id=$id");
+            $query = $this->db->db_connect->prepare("DELETE FROM empleados WHERE id = $id");
     
             $query->execute();
             $data = $query->fetch();
